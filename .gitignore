@@ -1,3 +1,45 @@
-node_modules
-.env
-/generated/prisma
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Environment
+.env*
+.env.*
+
+# Build/Output/Dist
+/dist/
+/build/
+/frontend/dist/
+/frontend/build/
+/backend/dist/
+/backend/build/
+
+# Prisma generated client & migrations output, but NOT schema
+/generated/
+/prisma/dev.db
+/prisma/migrations/
+
+# IDE/OS Artifacts
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+*.code-workspace
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# Lock files (if you use only one, comment others as needed)
+package-lock.json
+yarn.lock (uncomment if you use Yarn and want to commit)
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+*.tgz
