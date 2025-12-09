@@ -1,0 +1,8 @@
+.chartContainer {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, #223469 0%, #27408b 50%, #2563eb 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px #12254b33;
+  padding: 16px;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import StockChart from './components/StockChart';
+import './CSS/App.css';
 
 function Companies() {
   return (
@@ -13,7 +14,7 @@ function Companies() {
 
 function Dashboard() {
   return (
-    <div style={{ marginTop: 48 }}>
+    <div>
       <StockChart />
     </div>
   );
@@ -22,15 +23,20 @@ function Dashboard() {
 function App() {
   return (
     <Router>
-      <div style={{ fontFamily: 'sans-serif', padding: 32 }}>
-        <header style={{ marginBottom: 24, borderBottom: '1px solid #eee', paddingBottom: 8 }}>
-          <Link to="/" style={{ marginRight: 16, textDecoration: 'none' }}>Dashboard</Link>
-          <Link to="/companies" style={{ textDecoration: 'none' }}>Companies</Link>
-        </header>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/companies" element={<Companies />} />
-        </Routes>
+      <div className="appLayout">
+        <aside className="sidebar">
+          <h1 className="logo">FairStock</h1>
+          <nav className="navLinks">
+            <Link to="/" className="navLink">Dashboard</Link>
+            <Link to="/companies" className="navLink">Companies</Link>
+          </nav>
+        </aside>
+        <main className="appMain">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/companies" element={<Companies />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );

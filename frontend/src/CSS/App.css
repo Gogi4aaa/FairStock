@@ -1,0 +1,64 @@
+:root {
+  --color-dark-blue: #12254B;
+  --color-primary-blue: #2563eb;
+  --color-highlight-blue: #4f7cfb;
+  --color-text: #e5eaf5;
+  --color-border: #172554;
+}
+
+.appLayout {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'sans-serif';
+  background: linear-gradient(120deg, #192447 0%, #2563eb 70%, #192447 100%);
+}
+
+.sidebar {
+  width: 220px;
+  background: linear-gradient(180deg, var(--color-primary-blue) 10%, var(--color-dark-blue) 100%);
+  color: var(--color-text);
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 2px solid var(--color-border);
+}
+
+.logo {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: center;
+}
+
+.navLink {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  display: block;
+}
+
+.navLink:hover {
+  background: linear-gradient(90deg, #4676e9, #6496fa);
+  color: #fff;
+}
+
+.appMain {
+  flex: 1;
+  padding: 48px;
+  background: linear-gradient(145deg, #1e325f 0%, #224eab 70%, #12254B 100%);
+  color: var(--color-text);
+  min-height: 100vh;
+}

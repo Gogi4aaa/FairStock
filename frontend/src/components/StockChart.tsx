@@ -9,6 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import '../CSS/StockChart.css';
 
 const data = [
   { date: '2023-12-01', price: 135 },
@@ -20,16 +21,23 @@ const data = [
   { date: '2023-12-07', price: 153 },
 ];
 
+const chartColors = {
+  background: '#192a4a',
+  text: '#e5eaf5',
+  grid: '#344a6e',
+  line: '#409ffe',
+};
+
 const StockChart: React.FC = () => (
-  <div style={{ width: '100%', height: 300 }}>
+  <div className="chartContainer">
     <ResponsiveContainer width="100%" height="100%">
       <LineChart data={data} margin={{ top: 16, right: 32, left: 0, bottom: 0 }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="price" name="Stock Price" stroke="#8884d8" strokeWidth={2} dot={{ r: 4 }} />
+        <CartesianGrid strokeDasharray="6 6" stroke={chartColors.grid} />
+        <XAxis dataKey="date" stroke={chartColors.text} tick={{ fill: chartColors.text }} />
+        <YAxis stroke={chartColors.text} tick={{ fill: chartColors.text }} />
+        <Tooltip wrapperStyle={{ background: '#12254B', color: chartColors.text, borderRadius: 8 }} contentStyle={{ background: '#192a4a', color: chartColors.text, border: 'none', borderRadius: 8 }} labelStyle={{ color: chartColors.text }} itemStyle={{ color: chartColors.text }} />
+        <Legend wrapperStyle={{ color: chartColors.text }} />
+        <Line type="monotone" dataKey="price" name="Stock Price" stroke={chartColors.line} strokeWidth={2} dot={{ r: 4 }} />
       </LineChart>
     </ResponsiveContainer>
   </div>
