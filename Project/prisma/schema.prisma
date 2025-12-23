@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model User {
+  id                      Int      @id @default(autoincrement())
+  username                String   @unique
+  password_hash           String
+  email                   String?
+  full_name               String?
+  investor_category       String?
+  questionnaire_completed Boolean  @default(false)
+  questionnaire_answers   Json?
+  risk_score              Int?
+  watchlist               Json
+  recently_viewed         Json
+  role                    String   @default("user")
+  created_at              DateTime @default(now())
+  updated_at              DateTime @updatedAt
+
+  @@map("users")
+}
