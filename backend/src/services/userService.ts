@@ -11,3 +11,6 @@ export function register(username: string, password: string): { success: boolean
 export function login(username: string, password: string): boolean {
   return !!users.find((u) => u.username === username && u.password === password);
 }
+
+
+
