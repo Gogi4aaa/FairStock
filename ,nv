@@ -1,6 +1,0 @@
-DATABASE_URL="mysql://root:@localhost:3306/FairStock"
-DATABASE_USER="root"
-DATABASE_PASSWORD=""
-DATABASE_NAME="FairStock"
-DATABASE_HOST="localhost"
-DATABASE_PORT=3306
